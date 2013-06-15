@@ -1,4 +1,4 @@
-<?php
+<?php namespace Juncture\DiscussApi;
 
 class Post extends BaseModel {
 
@@ -15,7 +15,7 @@ class Post extends BaseModel {
 	 */
 	public function tags()
 	{
-		return $this->belongsToMany('Tag', $this->prefix.'post_tag');
+		return $this->belongsToMany('Juncture\DiscussApi\Tag', $this->prefix.'post_tag');
 	}
 
 	/**

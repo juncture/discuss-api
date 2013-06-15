@@ -1,6 +1,9 @@
-<?php
+<?php namespace Juncture\DiscussApi;
 
-class BaseModel extends Eloquent {
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
+
+class BaseModel extends Model {
 
 	public $prefix = '';
 
@@ -9,7 +12,8 @@ class BaseModel extends Eloquent {
 		$this->prefix = Config::get('discuss-api::table_prefix');
 
 		// Set the table name based on the calling class
-		$this->table = $this->prefix.strtolower(str_plural(get_class($this)));
+		$class = str_replace('Juncture\\DiscussApi\\', '', get_class($this));
+		$this->table = $this->prefix.strtolower(str_plural($class));
 	}
 
 	/**

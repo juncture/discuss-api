@@ -1,4 +1,7 @@
-<?php
+<?php namespace Juncture\DiscussApi;
+
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Route;
 
 // Set route based on API config, unless null then use Discuss config instead
 $route_prefix = Config::get('discuss-api::route') ?: Config::get('discuss::route');

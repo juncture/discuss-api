@@ -1,4 +1,4 @@
-<?php
+<?php namespace Juncture\DiscussApi;
 
 class Tag extends BaseModel {
 

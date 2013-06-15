@@ -1,6 +1,7 @@
-<?php
+<?php namespace Juncture\DiscussApi;
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Config;
 
 class BaseMigration extends Migration {
 
