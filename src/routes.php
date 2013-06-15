@@ -13,13 +13,6 @@ Route::group(array('prefix' => $route_prefix.'/api'), function()
 		return "Hello, World! I'm an API.";
 	});
 
-	Route::get('posts', function()
-	{
-		return Post::with('user', 'tags')->get()->toJson();
-	});
-
-	Route::get('tags', function()
-	{
-		return Tag::with('posts')->get()->toJson();
-	});
+	Route::resource('posts', 'Juncture\DiscussApi\PostController');
+	Route::resource('tags', 'Juncture\DiscussApi\TagController');
 });
