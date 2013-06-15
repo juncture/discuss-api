@@ -7,8 +7,10 @@ class BaseModel extends Model {
 
 	public $prefix = '';
 
-	public function __construct()
+	public function __construct(array $attributes = array())
 	{
+		parent::__construct($attributes);
+
 		$this->prefix = Config::get('discuss-api::table_prefix');
 
 		// Set the table name based on the calling class

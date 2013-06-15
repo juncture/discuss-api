@@ -9,12 +9,14 @@ class Tag extends BaseModel {
 	 */
 	protected $fillable = array('name', 'class');
 
+	public $timestamps = false;
+
 	/**
 	 * Post relationship
 	 *
 	 */
 	public function posts()
 	{
-		return $this->belongsToMany('Post', $this->prefix.'post_tag');
+		return $this->belongsToMany('Juncture\DiscussApi\Post', $this->prefix.'post_tag');
 	}
 }
